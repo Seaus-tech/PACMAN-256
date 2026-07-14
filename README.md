@@ -1,10 +1,10 @@
 # 🕹️ Pac-Man 256 Native iOS/macOS Port
 
-<p align="center>
+<p align="center">
   <strong>A high-fidelity native Swift port of the Pac-Man 256 endless scrolling arcade game using SwiftUI, SpriteKit, and AVFoundation.</strong>
 </p>
 
-<p align="center>
+<p align="center">
   <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20macOS-blue?style=flat-square&logo=apple" alt="Platforms" />
   <img src="https://img.shields.io/badge/Language-Swift-orange?style=flat-square&logo=swift" alt="Swift" />
   <img src="https://img.shields.io/badge/Framework-SwiftUI-orange?style=flat-square&logo=swift" alt="SwiftUI" />
