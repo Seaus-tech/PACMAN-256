@@ -6,76 +6,123 @@
 
 <p align="center>
   <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20macOS-blue?style=flat-square&logo=apple" alt="Platforms" />
-  <img src="https://img.shields.io/badge/Language-Swift-orange?style=flat-square&logo=swift" alt="Swift" />
-  <img src="https://img.shields.io/badge/Framework-SwiftUI-orange?style=flat-square&logo=swift" alt="SwiftUI" />
-  <img src="https://img.shields.io/badge/Graphics-SpriteKit-red?style=flat-square&logo=xcode" alt="SpriteKit" />
-  <img src="https://img.shields.io/badge/Audio-AVFoundation-blue?style=flat-square&logo=apple" alt="AVFoundation" />
+  <img src="https://img.shields.io/badge/Language-Swift-F05138?style=flat-square&logo=swift" alt="Swift" />
+  <img src="https://img.shields.io/badge/Framework-SwiftUI-F05138?style=flat-square&logo=swift" alt="SwiftUI" />
+  <img src="https://img.shields.io/badge/Graphics-SpriteKit-F05138?style=flat-square&logo=xcode" alt="SpriteKit" />
+  <img src="https://img.shields.io/badge/Audio-AVFoundation-F05138?style=flat-square&logo=apple" alt="AVFoundation" />
 </p>
 
 ---
 
-## 🌌 Overview
+## 📖 Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running](#running)
+- [Controls](#controls)
+- [Architecture](#architecture)
+- [Codebase Structure](#codebase-structure)
+- [Troubleshooting](#troubleshooting)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
 
 This repository contains a native iOS and macOS port of **Pac-Man 256**, the procedural endless-corridor arcade game. Written entirely in Swift, the game bypasses web-view engines and runs directly on metal via SpriteKit, featuring real-time generated synth chiptunes and responsive swipe controls.
 
----
+## Features
 
-## ✨ Features & Architecture
+| Feature | Description |
+|---------|-------------|
+| ⚡ **SpriteKit Graphics Core** | High-performance 60/120 FPS rendering engine |
+| 🎵 **Synthetic Audio Generator** | Real-time retro chiptune and laser sounds via AVAudioEngine |
+| 🗺️ **Procedural Maze Generator** | Endless scrolling isometric layouts |
+| 📱 **SwiftUI Overlay HUD** | Retro shop dashboards and multiplier indicators |
+| 👆 **Swipe Controls** | Native gesture recognizers for intuitive play |
 
-- ⚡ **SpriteKit Graphics Core (`SKScene`)** — High-performance 60/120 FPS rendering engine for corridor structures, dot layouts, laser sweeps, and ghost pathfinding
-- 🎵 **Synthetic Audio Generator (`AVAudioEngine`)** — Generates retro chiptune sounds and laser frequency sweeps procedurally in real time on the device's audio chip
-- 🗺️ **Procedural Maze Generator** — Endless scrolling isometric layouts generated dynamically as the player moves up
-- 📱 **SwiftUI Overlay HUD** — Retro shop dashboards, multiplier indicators, and status overlays styled with native gradients
-- 👆 **Swipe Controls** — Uses native swipe gesture recognizers to steer Pac-Man through grid intersections
-
----
-
-## 🛠️ Codebase Structure
-
-All native source files are located under [**PAC/PacMan256/**](file:///Users/YashB/seaus/PACMAN-256/PAC/PacMan256):
-
-- [**AppMain.swift**](file:///Users/YashB/seaus/PACMAN-256/PAC/PacMan256/AppMain.swift) — The main application entryway
-- [**ContentView.swift**](file:///Users/YashB/seaus/PACMAN-256/PAC/PacMan256/ContentView.swift) — Handles overlays, menus, shops, and houses the SpriteKit game view
-- [**GameScene.swift**](file:///Users/YashB/seaus/PACMAN-256/PAC/PacMan256/GameScene.swift) — The main game loop, rendering pipelines, pathfinding, and collision handling
-- [**MazeGenerator.swift**](file:///Users/YashB/seaus/PACMAN-256/PAC/PacMan256/MazeGenerator.swift) — The endless corridor procedural generation logic
-- [**SoundManager.swift**](file:///Users/YashB/seaus/PACMAN-256/PAC/PacMan256/SoundManager.swift) — Real-time audio waveform synth oscillator using AVFoundation
-- [**Models.swift**](file:///Users/YashB/seaus/PACMAN-256/PAC/PacMan256/Models.swift) — Data contracts, direction enums, and score configurations
-
----
-
-## 🚀 Xcode Setup Quick Start
-
-You can build and run the game on an iPhone, iPad, or Mac (via Catalyst or Apple Silicon) in under 5 minutes:
-
-1. **Create an Xcode Project** — Create a new iOS App project named `PacMan256` with interface set to **SwiftUI** and language to **Swift**
-2. **Add Files** — Drag and drop the 6 Swift source files from the `PAC/PacMan256` directory into your Xcode project hierarchy
-3. **Compile & Run** — Connect your physical device or choose a simulator, and hit `Cmd + R` to compile and launch!
-
----
-
-## 📸 Screenshots
+## Screenshots
 
 ![PacMan 256 Gameplay](screenshots/gameplay.png)
 
 *(Screenshots coming soon)*
 
----
+## Prerequisites
 
-## 🎮 Controls
+- Xcode 15.0 or later
+- iOS 17.0+ / macOS 14.0+ deployment target
+- Apple Silicon Mac or iOS device recommended
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Seaus-tech/PACMAN-256.git
+cd PACMAN-256
+```
+
+2. Open the Xcode project in `PAC/PacMan256/`
+
+## Running
+
+1. Create an Xcode project named `PacMan256` with SwiftUI interface
+2. Drag and drop the 6 Swift source files from `PAC/PacMan256/` into your project
+3. Select your target device and press `Cmd + R`
+
+## Controls
 
 | Platform | Control |
 |----------|---------|
 | iOS | Swipe gestures to steer Pac-Man |
 | macOS | Arrow keys or WASD |
 
----
+## Architecture
 
-## 🤝 Contributing
+- **SpriteKit Engine** - `SKScene` and `SKShapeNode` for high-performance rendering
+- **AVAudioEngine** - Procedural audio synthesis using `AVAudioSourceNode`
+- **SwiftUI HUD** - Modern interface overlays with native gradients
+- **Procedural Generation** - Dynamic maze creation as player ascends
+
+## Codebase Structure
+
+All native source files are located under `PAC/PacMan256/`:
+
+| File | Description |
+|------|-------------|
+| `AppMain.swift` | Application entry point |
+| `ContentView.swift` | Overlays, menus, shops, and SpriteKit view container |
+| `GameScene.swift` | Main game loop, rendering, pathfinding, collision |
+| `MazeGenerator.swift` | Procedural maze generation logic |
+| `SoundManager.swift` | Real-time audio synthesis |
+| `Models.swift` | Data contracts, enums, and configurations |
+
+## Troubleshooting
+
+If you encounter build errors:
+
+1. Ensure SpriteKit and AVFoundation frameworks are linked
+2. Check that all 6 Swift files are added to the target
+3. Verify deployment target is iOS 17.0+ or macOS 14.0+
+
+## Roadmap
+
+- [ ] Add more power-ups from original Pac-Man 256
+- [ ] Implement cloud save synchronization
+- [ ] Add particle effects for visual polish
+
+## Contributing
 
 Contributions are welcome! Feel free to submit issues and pull requests.
 
----
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 License
+## License
 
 © 2026 Seaus Tech. All rights reserved.
