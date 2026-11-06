@@ -126,7 +126,9 @@ struct ContentView: View {
                 }
             }
         }
+        #if !os(macOS)
         .statusBar(hidden: true)
+        #endif
     }
     
     // MARK: - View Modules
